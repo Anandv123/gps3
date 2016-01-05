@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="./js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+alert("START");
+    lat="1111";
+    long="2222";
+    alert("Latitude: " + lat + 
+    "<br>Longitude: " + long);	
+    
+       
+       var fbURL="http://mytestwebsite.in/android1/index.php? insert=1&mylat="+lat+"&mylong="+long+"&my_user=1";
+       commentdata='hi';
+       $.ajax({
+       url: fbURL+"&callback=?",
+       data: "message="+commentdata,
+       type: 'POST',
+       success: function (resp) {
+       },
+       error: function(e) {
+       }  
+       });
+}); 
+});
+</script>
+</head>
+<body>
+
+<button id="demo">Send</button>
+
+</body>
+</html>
